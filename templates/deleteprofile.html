@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div style="text-align: center">
+<form action="/deleteprofile" method="post">
+  <div class="form-group">
+    <label for="exampleFormControlSelect1"></label>
+    <select class="form-control" name="name">
+
+      {% for i in range(lenght): %}
+
+      <option value= "{{datapet[i]['name']}}">{{datapet[i]["name"]}}</option>
+
+      {% endfor %}		
+    </select>
+
+
+  <button type="submit" class="btn mb-2" style="margin-top: 5px; color:white; background-color: #ff6584">Delete</button>
+</form>
+</div>
+
+{% endblock %}

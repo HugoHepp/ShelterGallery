@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+{% if lenght == 0 %}
+
+
+<div class="row" style="padding-left: 63px;">
+  <div class="col-12" style="padding-left: 0px;">
+    <h2>{{speciestitle}}S</h2>
+    <h3> There is no {{speciestext}} in your area registered for now.</h3>
+  </div>
+</div>
+<div class="row" style="padding-left: 63px;">
+  <div class="col-12" style="padding-left: 0px;">
+     <a style="color:#FF6584" href="/">Return</a>
+  </div>
+</div>
+
+
+
+
+{% else %}
+
+
+
+
+<div class="row" style="padding-left: 63px;">
+  <div class="col-12" style="padding-left: 0px;">
+    <h2>{{speciestitle}}S</h2>
+    <h3> Here are the {{speciestext}}s in your area:</h3>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 34px; margin-left: 61px;">
+
+{% for i in range(lenght): %}
+
+<div class="col-auto" style="margin-top: 26px;">
+  <div class="card" style="width: 185px; border-radius:15px; background-color: #E6E6E6;">
+      <img src="static\img\{{dataquote[i]['picture']}}" class="card-img-top" alt="..." style="border-radius:15px 15px 0px 0px; height: 185px; width: 185px; object-fit: cover;">
+  <div class="btn" data-toggle="collapse" href="#collapseExample{{ loop.index }}" role="button" aria-expanded="false" aria-controls="collapseExample">    
+      <div class="card-body" style="padding: 0px;">
+        <p class="card-text" style="padding-top:15px; text-align:center; font-style: normal; font-weight: 600; font-size: 19px; line-height: 28px;">{{dataquote[i]["name"]}}</p>  
+        <p style="font-family: Poppins;font-style: normal; font-weight: normal; font-size: 15px; line-height: 22px; text-align: center; color: #FF6584;">Show details</p>    
+      </div>
+  </div>
+   <div class="collapse" id="collapseExample{{ loop.index }}">
+      <div class="card-footer">
+        <p class="card-text" style="text-align: center;">Sexe:<br><b>{{dataquote[i]["sexe"]}}</b></p>
+        <p class="card-text" style="text-align: center;">
+        Birthdate:<br><b>{{dataquote[i]["birth"]}}</b></p>
+        <p class="card-text" style="text-align: center;">
+        Find me at:<br><b>{{dataquote[i]["username"]}} <br>{{dataquote[i]["city"]}}<br>{{dataquote[i]["phone"]}}</b></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+{% endfor %}
+{% endif %}
+{% endblock %}

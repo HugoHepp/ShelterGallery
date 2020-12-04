@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div style="text-align: center">
+<p>Tell me more about your pet!</p>
+<form action="/createprofile" method="post" enctype=multipart/form-data style="padding-top: 20px;" autocomplete="off">
+  <div class="form-group">
+    <select class="form-control" style="width: 175px;" name="species">
+      <option value="Dog">Dog</option>
+      <option value="Cat">Cat</option>
+      <option value="Bird">Bird</option>
+      <option value="Rodent">Rodent</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <input type="text" class="form-control" name="name" style="width: 175px;" placeholder="Name">
+  </div>
+
+    <div class="form-group">
+    <input type="date" class="form-control" style="width: 175px;" name="birth">
+  </div>
+
+  <div class="form-group">
+    <select class="form-control" style="width: 175px;" name="sexe">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+   <input type=file name=file>
+  </div>
+
+
+  <button type="submit" value=Upload class="btn" style="color: white; background-color: #FF6584">Go!</button>
+</form>
+</div>
+{% endblock %}

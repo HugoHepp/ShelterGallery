@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+{% if petisempty == 0 %}
+
+<div class="row" style="text-align: center">
+    <div class="col-12" style="padding-top:100px;">
+        <p>You did not create pet profile yet.. </p>
+    </div>
+    <div class="col-12" style="padding-top:20px;">
+        <a style="color:#FF6584;" href="/createprofile">Create profile</a>
+    </div>
+</div>
+
+{% else %}
+
+<div class="row" style="padding-left: 63px;">
+  <div class="col-12" style="padding-left: 0px;">
+    <h2>MY ACCOUNT</h2>
+    <h3> Here are the pets registered for your shelter:</h3>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+
+{% for i in range(lenght): %}
+
+    <div class="col-auto" style="margin-top: 26px;">
+        <div class="card" style="width: 185px; border-radius:15px; background-color: #E6E6E6;">
+            <img src="static\img\{{datapet[i]['picture']}}" class="card-img-top" alt="..." style="border-radius:15px 15px 0px 0px; height: 185px; width: 185px; object-fit: cover;">
+            <div class="card-body" style="padding: 0px; padding-bottom: 10px">
+                  <p class="card-text" style="padding-top:15px; text-align:center; font-style: normal; font-weight: 600; font-size: 19px; line-height: 28px;">{{datapet[i]["name"]}}</p>  
+            </div>
+        </div>
+    </div>
+
+
+{% endfor %}
+</div>
+
+
+<div class="row justify-content-center" style="padding-top:50px; padding-bottom: 15px;">
+ <div class="col-auto">
+  <a href="/createprofile" style="color:#ff6584;">Create profile</a>
+ </div>
+ <div class="col-auto">
+  <a href="/deleteprofile" style="color:#ff6584;">Delete profile</a>
+ </div>
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col-lg-1 col-0"></div>
+    <div class="col-lg-4 col-12">
+        <h2>REGISTER YOUR SHELTER</h2>
+        <p style="text-align: left; font-size: 16px">You will must prove your identity by mail to<br><em>verify@sheltergallery</em> to activate your account</p>
+    </div>
+    <div class="col-lg-5 col-12" style="padding-top: 30px;">
+        <form action="/register" method="post" autocomplete="off">
+            <div class="form-group">
+                <input autocomplete="off"  class="form-control" name="username" placeholder="Name of the shelter" type="text">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off"  class="form-control" name="mail" placeholder="Mail@example.com" type="text">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off"  class="form-control" name="city" placeholder="City" type="text">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off"  class="form-control" name="state" placeholder="State" type="text">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off"  class="form-control" name="phone" placeholder="Phone" type="text">
+            </div>
+            <div class="form-group">
+                <input autocomplete="off"  class="form-control" name="website" placeholder="Website" type="text">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password">
+            </div>
+            <div style="padding-top:10px">
+            <button class="btn" style="background-color:#FF6584; color:white;" type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</div>    
+
+{% endblock %}
